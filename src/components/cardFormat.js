@@ -5,12 +5,13 @@ import "./style.css";
 function MakeCard(props) {
     return (
         <div className="card">
-                <img
-                    id={props.id}
-                    suit={props.name}
-                    alt={props.alt}
-                    src="https://i.imgur.com/tz03p1Y.png"
-                />
+            <img
+                onClick={() => {props.handleClick()}}
+                id={props.id}
+                suit={props.name}
+                alt={props.alt}
+                src="https://i.imgur.com/tz03p1Y.png"
+            />
         </div>
     );
 }

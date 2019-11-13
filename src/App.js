@@ -4,20 +4,39 @@ import './App.css';
 import MakeCard from "./components/cardFormat";
 import cards from "./cards.json";
 
-function App() {
-  return (
-    <div>
-      {
-        cards.map(card => (
-          <MakeCard
-          id={card.id} name={card.name} alt={card.alt} />
-        ))
-      }
-    </div>
+class Game extends React.Component {
+  state = {
+    cardPicked: '',
+    score: 0
+  }
 
-  );
+  componentDidMount() {
+    this.setState({ score: 0 })
+
+  }
+
+  handleClick=()=>{
+    alert("You picked a card:" + prop.id)
+    this.setState({ cardPicked: this.id })
+  }
+
+  render() {
+    return (
+      <div>
+        {
+          cards.map(card => (
+            <MakeCard
+              id={card.id}
+              name={card.name}
+              alt={card.alt}
+              handleClick={this.handleClick}
+            />
+          ))
+        }
+      </div>
+    )
+  }
 }
-
-export default App;
+export default Game;
 
 
