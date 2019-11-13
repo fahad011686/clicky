@@ -16,7 +16,7 @@ class Game extends React.Component {
   }
 
   handleClick=()=>{
-    alert("You picked a card:" + prop.id)
+    alert("You picked a card:" + this.id)
     this.setState({ cardPicked: this.id })
   }
 
