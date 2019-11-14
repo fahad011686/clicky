@@ -20,11 +20,14 @@ class Game extends React.Component {
       let newScore = (this.state.score + 1);
       this.setState({ score: newScore })
       alert("You got a point!")
+      this.setState({ cardPicked: [] })
+
     }
     else {
       let newStrikes = (this.state.strikes + 1);
       this.setState({ strikes: newStrikes })
       alert("That was incorrect.")
+      this.setState({ cardPicked: [] })
     }
   }
 
